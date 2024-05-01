@@ -28,7 +28,7 @@ macro(EXPLODE listname)
   set(_idx "0")
   foreach(varname ${ARGN})
     list(GET ${listname} ${_idx} ${varname})
-    math(EXPR _idx "${_idx} + 1}")
+    math(EXPR _idx "${_idx} + 1")
   endforeach()
 endmacro()
 
@@ -146,7 +146,7 @@ function(check_call)
       message(FATAL_ERROR " Failed to execute command ${idx}:\n"
                           "   ${cmdstr}\n   ${stderr}")
     endif()
-    math(EXPR idx "${idx} + 1}")
+    math(EXPR idx "${idx} + 1")
   endforeach()
 
   if(NOT "${result}" EQUAL "0")
