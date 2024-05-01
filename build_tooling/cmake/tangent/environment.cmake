@@ -57,7 +57,6 @@ endfunction()
 # Detect the build environment that is running cmake. Returns in the calling
 # scope the following variables:
 #
-# * IS_TRAVIS_CI - TRUE if this is on travis
 # * IS_PULL_REQUEST - TRUE if this is a travis pull request build
 # * TANGENT_IS_DEBIAN_BUILD - TRUE if this is a pbuilder/pbuild or launchpad
 #   execution
@@ -68,12 +67,6 @@ endfunction()
 # ~~~
 # include(environment.cmake)
 # ~~~
-set(IS_TRAVIS_CI FALSE)
-if("$ENV{CI}" STREQUAL "true"
-   AND "$ENV{TRAVIS}" STREQUAL "true")
-  set(IS_TRAVIS_CI TRUE CACHE BOOL "This build is on travis" FORCE)
-endif()
-
 set(IS_PULL_REQUEST FALSE)
 if(DEFINED ENV{TRAVIS_PULL_REQUEST} AND "$ENV{TRAVIS_PULL_REQUEST}" STREQUAL
                                         "true")

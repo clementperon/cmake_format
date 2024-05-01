@@ -1,1 +1,1 @@
-github.com/cheshirekow/buildtools/buildifier
+github.com/cheshirekow/buildtools/buildifier@latest
