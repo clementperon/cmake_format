@@ -75,7 +75,7 @@ Usage
     positional arguments:
       infilepaths
 
-    optional arguments:
+    options:
       -h, --help            show this help message and exit
       -v, --version         show program's version number and exit
       -l {error,warning,info,debug}, --log-level {error,warning,info,debug}
@@ -113,7 +113,7 @@ Usage
     positional arguments:
       infilepaths
 
-    optional arguments:
+    options:
       -h, --help            show this help message and exit
       -v, --version         show program's version number and exit
       -l {error,warning,info,debug}, --log-level {error,warning,info,debug}
