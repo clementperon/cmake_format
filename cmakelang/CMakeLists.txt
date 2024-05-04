@@ -8,15 +8,6 @@ foreach(testname ${_testnames})
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 endforeach()
 
-if(NOT IS_TRAVIS_CI)
-  foreach(testname ${_testnames})
-    tangent_addtest(
-      NAME cmakelang-${testname}_py3
-      COMMAND python3 -Bm cmakelang.${testname}
-      WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-  endforeach()
-endif()
-
 set(_genfiles)
 add_custom_command(
   OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/parse/variables.py

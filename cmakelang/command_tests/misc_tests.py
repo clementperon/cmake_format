@@ -21,44 +21,44 @@ class TestMiscFormatting(TestBase):
 
     # make sure changing hashruler_min_length works correctly
     # self.config.enable_markup = False
-    for min_width in {3, 5, 7, 9}:
+    for min_width in [3, 5, 7, 9]:
       self.config.markup.hashruler_min_length = min_width
 
       # NOTE(josh): these tests use short rulers that wont be picked up by
       # the default pattern
-      self.config.markup.ruler_pattern = (r'#{%d}#*' % (min_width - 1))
+      self.config.markup.ruler_pattern = r'#{%d}#*' % (min_width - 1)
 
       just_shy = '#' * (min_width - 1)
       just_right = '#' * min_width
       longer = '#' * (min_width + 2)
       full_line = '#' * (self.config.format.line_width - 2)
 
-      assert_format(self, """
+      assert_format(self, f"""
 # A comment: min_width={min_width}, just_shy
 {just_shy}
-""".format(min_width=min_width, just_shy=just_shy),
-          """\
+""",
+          f"""\
 # A comment: min_width={min_width}, just_shy
 #
-""".format(min_width=min_width))
+""")
 
-      assert_format(self, """
+      assert_format(self, f"""
 # A comment: min_width={min_width}, just_right
 {just_right}
-""".format(min_width=min_width, just_right=just_right),
-          """\
+""",
+          f"""\
 # A comment: min_width={min_width}, just_right
 # {full_line}
-""".format(min_width=min_width, full_line=full_line))
+""")
 
-      assert_format(self, """
+      assert_format(self, f"""
 # A comment: min_width={min_width}, longer
 {longer}
-""".format(min_width=min_width, longer=longer),
-          """\
+""",
+          f"""\
 # A comment: min_width={min_width}, longer
 # {full_line}
-""".format(min_width=min_width, full_line=full_line))
+""")
 
   def test_windows_line_endings_input(self):
     self.source_str = (

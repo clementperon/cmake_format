@@ -1,3 +1,0 @@
-pandoc
-golang-1.13
-ninja-build

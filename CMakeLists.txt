@@ -12,10 +12,6 @@ endif()
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
-find_package(Threads REQUIRED)
-find_package(fmt QUIET)
-find_package(Clang QUIET CONFIG)
-
 if(EXISTS ${CMAKE_SOURCE_DIR}/build_tooling/cmake)
   list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/build_tooling/cmake)
 endif()
@@ -23,44 +19,6 @@ endif()
 # that does not seem to be true.
 list(APPEND CMAKE_MODULE_PATH /usr/share/cmake/Modules)
 include(tangent)
-
-# cmake-lint: disable=E1122
-pkg_find(
-  PKG cairomm-1.0
-  PKG cairomm-svg-1.0
-  PKG cairomm-pdf-1.0
-  PKG eigen3
-  PKG fontconfig
-  PKG freetype2
-  PKG fuse
-  PKG gdk-pixbuf-2.0
-  PKG gdkmm-3.0
-  PKG glib-2.0
-  PKG glibmm-2.4
-  PKG gnuradio-osmosdr
-  PKG gnuradio-filter
-  PKG gobject-introspection-1.0
-  PKG gtk+-3.0
-  PKG gtkmm-3.0
-  PKG libcurl
-  PKG libelf
-  PKG libglog
-  PKG libpng NAMES libpng12 libpng16
-  PKG librsvg-2.0
-  PKG librtlsdr
-  PKG libssh
-  PKG libssh_threads
-  PKG libudev
-  PKG libzip
-  PKG openssl
-  PKG pango
-  PKG pangoft2
-  PKG pangomm-1.4
-  PKG protobuf
-  PKG tinyxml2
-  PKG uuid
-  PKG vulkan
-  PKG x11-xcb)
 
 include_directories(${CMAKE_SOURCE_DIR})
 

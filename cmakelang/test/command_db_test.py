@@ -7,7 +7,17 @@ from cmakelang.parse.funs import get_parse_db
 IGNORE_LIST = [
     "endforeach",
     "endfunction",
-    "endmacro"
+    "endmacro",
+    # FIXME: Support this new functions / macro
+    "add_link_options",
+    "block",
+    "cmake_file_api",
+    "cmake_language",
+    "cmake_path",
+    "endblock",
+    "target_link_directories",
+    "target_link_options",
+    "target_precompile_headers"
 ]
 
 

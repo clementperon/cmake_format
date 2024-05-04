@@ -14,10 +14,10 @@ if os.environ.get("READTHEDOCS") == "True":
   pass
 
 # General information about the project.
-docname = project + u'doc'
+docname = project + 'doc'
 title = project + ' Documentation'
-copyright = u'2018-2019, Josh Bialkowski'  # pylint: disable=W0622
-author = u'Josh Bialkowski'
+copyright = '2018-2019, Josh Bialkowski'  # pylint: disable=W0622
+author = 'Josh Bialkowski'
 
 # If your documentation needs a minimal Sphinx version, state it here.
 # needs_sphinx = '1.0'
@@ -47,8 +47,8 @@ templates_path = []
 source_suffix = ['.rst']
 master_doc = 'index'
 
-version = u'0.1.0'
-release = u'0.1.0'
+version = '0.1.0'
+release = '0.1.0'
 language = None
 exclude_patterns = [
     '.sphinx_build',
