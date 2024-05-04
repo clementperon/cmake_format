@@ -127,7 +127,7 @@ function(format_and_lint slug)
 
     add_custom_command(
       OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${filename}.lintstamp
-      COMMAND buildifier -indent 2 -mode check
+      COMMAND buildifier -mode check
               ${CMAKE_CURRENT_SOURCE_DIR}/${filename}
       COMMAND ${CMAKE_COMMAND} -E make_directory ${_dirpath}
       COMMAND ${CMAKE_COMMAND} -E touch
@@ -138,7 +138,7 @@ function(format_and_lint slug)
 
     add_custom_command(
       OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${filename}.fmtstamp
-      COMMAND buildifier -indent 2 -mode fix
+      COMMAND buildifier -mode fix
               ${CMAKE_CURRENT_SOURCE_DIR}/${filename}
       COMMAND ${CMAKE_COMMAND} -E make_directory ${_dirpath}
       COMMAND ${CMAKE_COMMAND} -E touch
@@ -149,7 +149,7 @@ function(format_and_lint slug)
 
     add_custom_command(
       OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${filename}.chkfmt
-      COMMAND buildifier -indent 2 -mode check
+      COMMAND buildifier -mode check
               ${CMAKE_CURRENT_SOURCE_DIR}/${filename}
       COMMAND ${CMAKE_COMMAND} -E make_directory ${_dirpath}
       COMMAND ${CMAKE_COMMAND} -E touch
